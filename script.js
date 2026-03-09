@@ -4,16 +4,16 @@ const animateMove = (element, prop, pixels) =>
   anime({
     targets: element,
     [prop]: `${pixels}px`,
-    easing: "easeOutCirc"
+    easing: "easeOutCirc",
   });
 
 ["mouseover", "click"].forEach(function (el) {
-  button.addEventListener(el, function (event) {
-    const top = getRandomNumber(window.innerHeight - this.offsetHeight);
-    const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+  button.addEventListener(el, () => {
+    const top = getRandomNumber(window.innerHeight - button.offsetHeight);
+    const left = getRandomNumber(window.innerWidth - button.offsetWidth);
 
-    animateMove(this, "left", left).play();
-    animateMove(this, "top", top).play();
+    animateMove(button, "left", left).play();
+    animateMove(button, "top", top).play();
   });
 });
 
@@ -22,5 +22,5 @@ const getRandomNumber = (num) => {
 };
 
 function f() {
-    alert("i know reee I LOVE YOU TOOOOOOO 💕💕")
+  alert("i know reee I LOVE YOU TOOOOOOO 💕💕");
 }
